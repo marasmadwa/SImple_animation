@@ -1,0 +1,36 @@
+.image {
+  position: relative;
+  display: inline-block;
+  overflow:hidden;/*   ukrycie wszystkiego co wyszło na zewnątrz */
+}
+.image img {
+  display:block;
+  transition: 0.4s all;
+}
+.image .overlay{
+  background:rgba(216,17,89,0.5);
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 40px;
+  opacity:0;
+
+  transition: 0.4s opacity ease-in, 3s color;  /* Tutaj możemy sobie punktować kolejne właściwości. Tutaj: wyświetlanie z opóźnieniem, ease-in jest to przyspieszenie na końcu a ease-out gdy wychodzimy*/
+}
+/*Tutaj dopiero robimy animację: */
+
+.image:hover .overlay {
+  opacity:1;
+  color:#000;//black
+}
+/* nasz kot: */
+.image:hover img{
+  transform:scale(1.2) rotate(18deg); /*skalowanie po przecinku jest określane poziom pion*/
+
+}
